@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - Veterinaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .links a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function guardarDatos(event) {
+            event.preventDefault();
+            const nombreCuidador = document.getElementById('nombre_cuidador').value;
+            const emailCuidador = document.getElementById('email_cuidador').value;
+            const telefonoCuidador = document.getElementById('telefono_cuidador').value;
+            const usuario = document.getElementById('usuario').value;
+            const contrasena = document.getElementById('contrasena').value;
+            const nombreMascota = document.getElementById('nombre_mascota').value;
+            const tipoMascota = document.getElementById('tipo_mascota').value;
+            const edadMascota = document.getElementById('edad_mascota').value;
+
+            const datosUsuario = {
+                nombreCuidador,
+                emailCuidador,
+                telefonoCuidador,
+                usuario,
+                contrasena,
+                nombreMascota,
+                tipoMascota,
+                edadMascota
+            };
+
+            localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
+            alert('Cuenta creada exitosamente. Ahora puedes iniciar sesión.');
+            window.location.href = 'inicio_sesion.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Crear Cuenta</h1>
+        <form action="crear_cuenta.php" method="post" onsubmit="guardarDatos(event)">
+            <h3>Datos del Cuidador</h3>
+            <label for="nombre_cuidador">Nombre:</label>
+            <input type="text" id="nombre_cuidador" name="nombre_cuidador" required>
+
+            <label for="email_cuidador">Correo Electrónico:</label>
+            <input type="email" id="email_cuidador" name="email_cuidador" required>
+
+            <label for="telefono_cuidador">Teléfono:</label>
+            <input type="tel" id="telefono_cuidador" name="telefono_cuidador" required>
+
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <h3>Datos de la Mascota</h3>
+            <label for="nombre_mascota">Nombre de la Mascota:</label>
+            <input type="text" id="nombre_mascota" name="nombre_mascota" required>
+
+            <label for="tipo_mascota">Tipo de Mascota:</label>
+            <input type="text" id="tipo_mascota" name="tipo_mascota" required>
+
+            <label for="edad_mascota">Edad de la Mascota:</label>
+            <input type="number" id="edad_mascota" name="edad_mascota" required>
+
+            <button type="submit">Crear Cuenta</button>
+        </form>
+        <div class="links">
+            <a href="INICIO.html">Inicio</a>
+            <a href="inicio_sesion.html">Iniciar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>

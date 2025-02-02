@@ -1,0 +1,5 @@
+La pagina inicial es la de nombre INICIO
+desde esta pagina puede ejecutar las demás,
+
+tuve que hacer las demás paginas debido a que no se ejecutaban correctamente
+y las programe en visual estudio code ya que en el programa dreamvewer no me permitió ejecutarlo, ni tampoco el programa Fireworks

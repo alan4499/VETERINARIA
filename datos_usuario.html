@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Usuario - Veterinaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .datos {
+            margin-bottom: 15px;
+        }
+        .datos h3 {
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        .datos p {
+            margin: 0;
+            color: #333;
+        }
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .links a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Recuperar datos del usuario desde localStorage
+            const datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
+
+            if (datosUsuario) {
+                // Insertar los datos en los elementos HTML correspondientes
+                document.getElementById('nombre_cuidador').textContent = datosUsuario.nombreCuidador;
+                document.getElementById('email_cuidador').textContent = datosUsuario.emailCuidador;
+                document.getElementById('telefono_cuidador').textContent = datosUsuario.telefonoCuidador;
+                document.getElementById('usuario').textContent = datosUsuario.usuario;
+                document.getElementById('nombre_mascota').textContent = datosUsuario.nombreMascota;
+                document.getElementById('tipo_mascota').textContent = datosUsuario.tipoMascota;
+                document.getElementById('edad_mascota').textContent = datosUsuario.edadMascota;
+            } else {
+                alert("No se encontraron datos del usuario. Por favor, inicia sesión primero.");
+                window.location.href = "inicio_sesion.html";
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Datos del Usuario</h1>
+        <div class="datos">
+            <h3>Datos del Cuidador</h3>
+            <p><strong>Nombre:</strong> <span id="nombre_cuidador">[Nombre del Cuidador]</span></p>
+            <p><strong>Correo Electrónico:</strong> <span id="email_cuidador">[Correo del Cuidador]</span></p>
+            <p><strong>Teléfono:</strong> <span id="telefono_cuidador">[Teléfono del Cuidador]</span></p>
+            <p><strong>Usuario:</strong> <span id="usuario">[Nombre de Usuario]</span></p>
+        </div>
+        <div class="datos">
+            <h3>Datos de la Mascota</h3>
+            <p><strong>Nombre:</strong> <span id="nombre_mascota">[Nombre de la Mascota]</span></p>
+            <p><strong>Tipo:</strong> <span id="tipo_mascota">[Tipo de Mascota]</span></p>
+            <p><strong>Edad:</strong> <span id="edad_mascota">[Edad de la Mascota]</span></p>
+        </div>
+        <div class="links">
+            <a href="INICIO.html">Inicio</a>
+            <a href="inicio_sesion.html">Cerrar Sesión</a>
+            <a href="crearcitas.html">crear cita</a>
+        </div>
+    </div>
+</body>
+</html>

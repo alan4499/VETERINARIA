@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Cita - Veterinaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .cita-info {
+            margin-bottom: 20px;
+        }
+        .cita-info h3 {
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        .cita-info p {
+            margin: 0;
+            color: #333;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .links a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cita = JSON.parse(localStorage.getItem('cita'));
+
+            if (!cita) {
+                alert("No se encontró ninguna cita. Por favor, agende una cita primero.");
+                window.location.href = "agendar_cita.html";
+                return;
+            }
+
+            document.getElementById('sucursal').textContent = cita.sucursal;
+            document.getElementById('horario').textContent = cita.horario;
+            document.getElementById('cuidador').textContent = cita.cuidador;
+            document.getElementById('mascota').textContent = cita.mascota;
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cita Agendada</h1>
+        <div class="cita-info">
+            <h3>Detalles de la Cita</h3>
+            <p><strong>Cuidador:</strong> <span id="cuidador"></span></p>
+            <p><strong>Mascota:</strong> <span id="mascota"></span></p>
+            <p><strong>Sucursal:</strong> <span id="sucursal"></span></p>
+            <p><strong>Horario:</strong> <span id="horario"></span></p>
+        </div>
+        <div class="links">
+            <a href="INICIO.html">Inicio</a>
+            <a href="inicio_sesion.html">Cerrar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>

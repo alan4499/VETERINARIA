@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita - Veterinaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1, h3 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .links a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
+
+            if (!datosUsuario) {
+                alert("No se encontraron datos del usuario. Por favor, inicia sesión primero.");
+                window.location.href = "inicio_sesion.html";
+                return;
+            }
+
+            document.getElementById('nombre_cuidador').textContent = datosUsuario.nombreCuidador;
+            document.getElementById('nombre_mascota').textContent = datosUsuario.nombreMascota;
+
+            document.getElementById('formCita').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const sucursal = document.getElementById('sucursal').value;
+                const horario = document.getElementById('horario').value;
+
+                if (!sucursal || !horario) {
+                    alert("Por favor selecciona una sucursal y un horario.");
+                    return;
+                }
+
+                const cita = {
+                    sucursal,
+                    horario,
+                    cuidador: datosUsuario.nombreCuidador,
+                    mascota: datosUsuario.nombreMascota
+                };
+
+                localStorage.setItem('cita', JSON.stringify(cita));
+                alert("Cita creada exitosamente.");
+                window.location.href = "ver_cita.html";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Agendar Cita</h1>
+        <form id="formCita" action="crear_cita.php" method="post">
+            <div>
+                <h3>Datos del Cuidador</h3>
+                <p><strong>Nombre:</strong> <span id="nombre_cuidador"></span></p>
+                <p><strong>Nombre de la Mascota:</strong> <span id="nombre_mascota"></span></p>
+            </div>
+            <label for="sucursal">Selecciona una Sucursal:</label>
+            <select id="sucursal" required>
+                <option value="">-- Selecciona una Sucursal --</option>
+                <option value="Avenida Insurgentes Sur #456, Colonia Roma, Baja California">Ana García - Avenida Insurgentes Sur #456</option>
+                <option value="Avenida Universidad #456, Colonia San Felipe, Chihuahua, Chihuahua">Juan Pérez - Avenida Universidad #456</option>
+                <option value="Calle 5 de Mayo #123, Colonia Centro, Ciudad de México">Maria Luiza Muños - Calle 5 de Mayo #123</option>
+                <option value="Avenida de las Flores #456, Colonia Jardines, Estado de México">Juan Pérez - Avenida de las Flores #456</option>
+                <option value="Avenida Vallarta #1234, Colonia Americana, Jalisco">María López - Avenida Vallarta #1234</option>
+                <option value="Calle de los Ángeles #789, Colonia Centro, Puebla, Puebla">María López - Calle de los Ángeles #789</option>
+            </select>
+
+            <label for="horario">Selecciona un Horario:</label>
+            <select id="horario" required>
+                <option value="">-- Selecciona un Horario --</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+            </select>
+
+            <button type="submit">Crear Cita</button>
+        </form>
+        <div class="links">
+            <a href="INICIO.html">Inicio</a>
+            <a href="inicio_sesion.html">Cerrar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>

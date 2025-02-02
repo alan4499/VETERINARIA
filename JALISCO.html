@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amigos de la Historia Veterinaria</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #35f1e2;
+        }
+        header {
+            background-color: #79baff;
+            color: rgb(0, 0, 0);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        td {
+            text-align: center;
+        }
+        /* Footer */
+        footer {
+            background: #23ac07;
+            color: black;
+            width: 100%;
+        }
+        .clinic-info {
+            background-color: #ebf8ff;
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .clinic-info div {
+            background-color: #fed7d7;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .clinic-info img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .action-links1 {
+            background-color: #797979;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            padding: 5px 0px;
+            margin-top: 10px;
+        }
+        .action-links2 {
+            background-color: #f6ad55;
+            text-align: center;
+            color: white;
+            padding: 5px 0;
+            margin-top: 0px;
+            }
+        .centered {
+            position: absolute;
+            left: 50%;
+            top: 80%;
+            transform: translate(-50%, -50%);
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* Header and Navigation */
+        .tablacentro {
+            width: 80%;
+        }
+        .tablacuerpo {
+            width: 80%;
+            table-layout: center;
+            margin-top: 280px;
+        }
+        .tablacuerpo td:first-child {
+            width: 70%;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 5px 5px;
+            margin-top: 0px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 35px;
+            font-size: 1.25rem;
+        }
+        .card i {
+            font-size: 6rem;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+            color: #718096;
+            font-size: 1rem;
+        }
+        .card a {
+            color: #ed8936;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        /* Location Section */
+        .cardubicacion {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 16px;
+            font-size: 1.25rem;
+            width: 350px;
+            height: 730px;
+            grid-column: span 2;
+            justify-self: center;
+            margin: 0;
+        }
+        .cardubicacion h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000000;
+        }
+        .cardubicacion ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+            color: #718096;
+            font-size: 1rem;
+        }
+        .cardubicacion a {
+            color: #ed8936;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .cardubicacion a:hover {
+            text-decoration: underline;
+        }
+
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+        <table align="center" class="tablacentro">
+            <tr>
+            <td>
+                <img src="https://static.vecteezy.com/system/resources/previews/008/128/668/non_2x/veterinary-clinic-logo-vector.jpg" alt="logo1" width="150px">
+            </td>
+            <td>
+                <h1>AMIGOS de la Historia Veterinaria</h1>
+                <p>Cuidamos a tus mascotas como parte de la familia</p>
+                <h1>Estado de Jalisco</h1>
+            </td>
+            <td>
+                <div class="search">
+                <input type="text" placeholder="Buscar">
+                <button>🔍</button>
+                </div>
+            </td>
+            </tr>
+        </table>
+        <div class="action-links1">
+            <table width="80%" align="center">
+            <tr>
+                <td><a href="INICIO.html">Inicio</a></td>
+                <td><a href="BAJACALIFORNIA.html">Baja California</a></td>
+                <td><a href="CHIHUHUA.html">Chihuahua</a></td>
+                <td><a href="CDMX.html">Ciudad de México</a></td>
+                <td><a href="EDOMEX.html">Estado de México</a></td>
+                <td><a href="JALISCO.html">Jalisco</a></td>
+                <td><a href="PUEBLA.html">Puebla</a></td>
+            </tr>
+            </table>
+        </div>
+        <div class="action-links2">
+            <table width="80%" align="center">
+            <tr>
+                <td><a href="inicio_sesion.html">INICIAR SESIÓN</a></td>
+                <td><a href="crear_cuenta.html">CREA TU CUENTA</a></td>
+                <td><a href="crearcitas.html">AGENDA YA TU CITA</a></td>
+            </tr>
+            </table>
+        </div>
+        </header>
+
+    <!-- Main Content -->
+    <section>
+        <table align="center" class="tablacuerpo">
+            <tr>
+                <td>
+                    <div class="services">
+                        <!-- Service Cards -->
+                        <div class="card">
+                            <i>🩺</i>
+                            <h3>Bienestar</h3>
+                            <ul>
+                                <li>Vacunación</li>
+                                <li>Chequeo general</li>
+                                <li>Baño y estética</li>
+                            </ul>
+                            <a href="bienestar.html">Ver mas ----></a>
+                        </div>
+                        <div class="card">
+                            <i>🏥</i>
+                            <h3>Cuidado</h3>
+                            <ul>
+                                <li>Hospitalización</li>
+                                <li>Servicio 24H</li>
+                                <li>Limpieza general</li>
+                            </ul>
+                            <a href="cuidado.html">Ver mas ----></a>
+                        </div>
+                        <div class="card">
+                            <i>✂️</i>
+                            <h3>Cirugías</h3>
+                            <ul>
+                                <li>Esterilización</li>
+                                <li>Cirugías de tejidos</li>
+                                <li>Ortopedia</li>
+                            </ul>
+                            <a href="cirujias.html">Ver mas ----></a>
+                        </div>
+                        <div class="card">
+                            <i>📋</i>
+                            <h3>Diagnóstico</h3>
+                            <ul>
+                                <li>Rayos X</li>
+                                <li>Ultrasonidos</li>
+                                <li>Pruebas de laboratorio</li>
+                            </ul>
+                            <a href="diagnostico.html">Ver mas ----></a>
+                        </div>
+                        <div class="card">
+                            <i>❤️</i>
+                            <h3>Especializaciones</h3>
+                            <ul>
+                                <li>Ortopedia</li>
+                                <li>Cardiología</li>
+                                <li>Oftalmología</li>
+                            </ul>
+                            <a href="especializaciones.html">Ver mas ----></a>
+                        </div>
+                        <div class="card">
+                            <i>🐾</i>
+                            <h3>Otros servicios</h3>
+                            <ul>
+                                <li>Certificado de viaje</li>
+                                <li>Spa canino</li>
+                                <li>Alimento</li>
+                            </ul>
+                            <a href="otros_servicios.html">Ver mas ----></a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="cardubicacion">
+                        <img src="https://th.bing.com/th/id/OIP.OvgBeisJUeRPAazRBuod2AHaHT?rs=1&pid=ImgDetMain" alt="logoclinica" width="180">
+                        <h3>SUCURSAL JALISCO</h3>
+                        <ul>
+                            <li>Doctor: María López</li>
+                            <li>CONTACTA YA</li>
+                            <li>(555) 987 65 43</li>
+                            <li>DIRECCIÓN</li>
+                            <li>Avenida Vallarta #1234</li>
+                            <li>Colonia Americana</li>
+                            <li>Jalisco</li>
+                            <li>Correo electrónico</li>
+                            <li>contacto@huellitasfelices.com</li>
+                        </ul>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15051.45838173816!2d-99.16477987898465!3d19.418255548132368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff2505123363%3A0xb36e938d3b412a8!2sAv.%20Cuauht%C3%A9moc%20149%2C%20Roma%20Nte.%2C%20Cuauht%C3%A9moc%2C%2006700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1636452688481!5m2!1ses-419!2smx" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table  align="center" style="width: 80%;">
+            <tr>
+                <td>
+                    <div class="clinic-info">
+                        <div>
+                            <a href="instalaciones.html" class="block hover:underline">
+                            <h3>Nuestras instalaciones están equipadas con lo último en tecnología</h3>
+                            <img src="https://live-b2b-gdm-figaro1.pantheonsite.io/wp-content/uploads/sites/23/2017/10/main-313.jpg" alt="Veterinary equipment in a modern clinic">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mascotas.html" class="block hover:underline">
+                            <h3>Conoce más sobre tus mascotas</h3>
+                            <img src="https://irp-cdn.multiscreensite.com/b0c29a09/pets.jpeg" alt="Group of pets including a dog and cats">
+                            </a>
+                        </div>
+                    </div>
+                </td>
+			</tr>
+        </table>
+    </section>
+<!-- Footer -->
+<footer>
+    <table style="width: 80%;" align="center">
+        <tr>
+            <td style="padding: 10px;">
+                <h3 class="font-bold">EL GRAN AMIGO</h3>
+                <p>CONTÁCTANOS</p>
+                <a href="mailto:contacto@huellitasfelices.com" class="text-blue-500 hover:underline">contacto@huellitasfelices.com</a>
+            </td>
+            <td style="padding: 10px; text-align: justify;">
+                <a href="INICIO.html" class="block hover:underline">Inicio</a><br>
+                <a href="INICIO.html" class="block hover:underline">Servicios</a><br>
+                <a href="instalaciones.html" class="block hover:underline">Sobre Nosotros</a><br>
+                <a href="BAJACALIFORNIA.html" class="block hover:underline">Sucursal BAJACALIFORNIA</a><br>
+                <a href="CHIHUHUA.html" class="block hover:underline">Sucursal CHIHUHUA</a><br>
+            </td>
+            <td style="padding: 10px; text-align: justify;">
+                <a href="CDMX.html" class="block hover:underline">Sucursal CDMX</a><br>
+                <a href="EDOMEX.html" class="block hover:underline">Sucursal EDOMEX</a><br>
+                <a href="JALISCO.html" class="block hover:underline">Sucursal JALISCO</a><br>
+                <a href="PUEBLA.html" class="block hover:underline">Sucursal PUEBLA</a><br>
+            </td>
+        </tr>
+    </table>
+</footer>
+</body>
+</html>
